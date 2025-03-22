@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: loksai-eta-deploy
+  name: priya-jmp-deploy
   labels:
     app: loksai-eta-deploy-lbl
 spec:
