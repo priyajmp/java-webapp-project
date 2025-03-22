@@ -3,32 +3,32 @@ kind: Deployment
 metadata:
   name: priya-jmp-deploy
   labels:
-    app: loksai-eta-deploy-lbl
+    app: priya-jmp-deploy-lbl
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: loksai-eta-app
+      app: priya-jmp-app
   template:
     metadata:
       labels:
-        app: loksai-eta-app
+        app: priya-jmp-app
     spec:
       containers:
-      - name: loksai-eta-container
-        image: loksaieta/loksai-eta-app
+      - name: priya-jmp-container
+        image: priyajmp/priya-jmp-app
         ports:
         - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: loksai-eta-np-service
+  name: priya-jmp-np-service
   labels:
-    app: loksai-eta-app
+    app: priya-jmp-app
 spec:
   selector:
-    app: loksai-eta-deploy-lbl
+    app: priya-jmp-deploy-lbl
 
   type: NodePort
   ports:
